@@ -8,6 +8,15 @@
 
 #import "RecipeTVC.h"
 
+@interface RecipeTVC()
+
+@property (weak, nonatomic) IBOutlet UIView *cellImage;
+@property (weak, nonatomic) IBOutlet UILabel *cellLabel;
+
+@property (nonatomic) Recipe *recipe;
+
+@end
+
 @implementation RecipeTVC
 
 - (void)awakeFromNib {
@@ -20,5 +29,12 @@
 
     // Configure the view for the selected state
 }
+
+- (void)configureCellWithRecipe: (Recipe *)recipe{
+    //excute the follwoing lines once the Recipe file is done
+//    self.cellImage.image = [UIImage imageeNamed:recipe.recipeImage];
+//    self.cellLabel.text = recipe.recipeTitle;
+}
+
 
 @end

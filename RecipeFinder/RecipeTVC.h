@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Recipe.h"
 
 @interface RecipeTVC : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIView *cellImage;
-@property (weak, nonatomic) IBOutlet UILabel *cellLabel;
+
+- (void)configureCellWithRecipe: (Recipe *)recipe;
 
 @end
