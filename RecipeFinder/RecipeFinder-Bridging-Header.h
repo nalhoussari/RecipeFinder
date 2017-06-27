@@ -10,5 +10,7 @@
 #import <Foundation/Foundation.h>
 
 #import "UserInputViewController.h"
+#import "Recipe.h"
+
 
 #endif

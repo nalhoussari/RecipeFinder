@@ -11,61 +11,64 @@ import UIKit
 
 class NutritionFilter: UIViewController {
     
-    var isVegan:Bool = false
-    var isVegetarian:Bool = false
-    var isGlutenFree:Bool = false
-    var isGrainFree:Bool = false
-    var isDiaryFree:Bool = false
+//    var isVegan:Bool = false
+//    var isVegetarian:Bool = false
+//    var isGlutenFree:Bool = false
+//    var isGrainFree:Bool = false
+//    var isDiaryFree:Bool = false
+    
+    //We need to unite the variables on Recipe to those:
+    var recipe: Recipe!
 
     @IBAction func veganButton(_ sender: UIButton) {
-        if(isVegan == false){
+        if(recipe.isVegan == false){
             sender.backgroundColor = UIColor.red
-            isVegan = true
+            recipe.isVegan = true
         } else {
             sender.backgroundColor = UIColor.yellow
-            isVegan = false
+            recipe.isVegan = false
         }
     }
     
     @IBAction func vegetarianButton(_ sender: UIButton) {
-        if(isVegetarian == false){
+        if(recipe.isVegetarian == false){
             sender.backgroundColor = UIColor.red
-            isVegetarian = true
+            recipe.isVegetarian = true
         } else {
             sender.backgroundColor = UIColor.yellow
-            isVegetarian = false
+            recipe.isVegetarian = false
         }
     }
     
     @IBAction func glutenButton(_ sender: UIButton) {
-        if(isGlutenFree == false){
+        if(recipe.isGlutenFree == false){
             sender.backgroundColor = UIColor.red
-            isGlutenFree = true
+            recipe.isGlutenFree = true
         } else {
             sender.backgroundColor = UIColor.yellow
-            isGlutenFree = false
+            recipe.isGlutenFree = false
         }
     }
     
     
     @IBAction func grainButton(_ sender: UIButton) {
-        if(isGrainFree == false){
+        if(recipe.isGrainFree == false){
             sender.backgroundColor = UIColor.red
-            isGrainFree = true
+            recipe.isGrainFree = true
         } else {
             sender.backgroundColor = UIColor.yellow
-            isGrainFree = false
+            recipe.isGrainFree = false
         }
     }
     
     
     @IBAction func dairyButton(_ sender: UIButton) {
-        if(isDiaryFree == false){
+        if(recipe.isDiaryFree == false){
             sender.backgroundColor = UIColor.red
-            isDiaryFree = true
+            recipe.isDiaryFree = true
         } else {
             sender.backgroundColor = UIColor.yellow
-            isDiaryFree = false
+            recipe.isDiaryFree = false
         }
     }
     
@@ -80,12 +83,14 @@ class NutritionFilter: UIViewController {
         if segue.identifier == "userInput"{
             
             if let userInputViewController = segue.destination as? UserInputViewController {
-
-                userInputViewController.isVagan = self.isVegan
-                userInputViewController.isVegetarian = self.isVegetarian
-                userInputViewController.isGlutenFree = self.isGlutenFree
-                userInputViewController.isGrainFree = self.isGrainFree
-                userInputViewController.isDiaryFree = self.isDiaryFree
+                
+                userInputViewController.recipe = self.recipe
+                
+//                userInputViewController.isVagan = self.isVegan
+//                userInputViewController.isVegetarian = self.isVegetarian
+//                userInputViewController.isGlutenFree = self.isGlutenFree
+//                userInputViewController.isGrainFree = self.isGrainFree
+//                userInputViewController.isDiaryFree = self.isDiaryFree
                 
             }
         }

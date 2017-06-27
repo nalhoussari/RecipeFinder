@@ -7,8 +7,17 @@
 //
 
 #import "ViewController.h"
+#import "Recipe.h"
 
 @interface RecipesTableView : ViewController
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (nonatomic) Recipe *recipe;
+
+//@property (nonatomic) BOOL isVagan;
+//@property (nonatomic) BOOL isVegetarian;
+//@property (nonatomic) BOOL isGlutenFree;
+//@property (nonatomic) BOOL isGrainFree;
+//@property (nonatomic) BOOL isDiaryFree;
 
 @end

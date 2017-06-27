@@ -8,6 +8,7 @@
 
 #import "UserInputViewController.h"
 
+
 @interface UserInputViewController ()
 
 @end
@@ -20,6 +21,22 @@
 }
 
 - (IBAction)doneUserInput:(id)sender {
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"recipeList"]){
+        
+        RecipesTableView *recipesTableView = segue.destinationViewController;
+
+        //After setting the model Recipe
+        recipesTableView.recipe = self.recipe;
+        
+//        recipesTableView.isVagan = self.isVagan;
+//        recipesTableView.isVegetarian = self.isVegetarian;
+//        recipesTableView.isGlutenFree = self.isGlutenFree;
+//        recipesTableView.isGrainFree = self.isGrainFree;
+//        recipesTableView.isDiaryFree = self.isDiaryFree;
+    }
 }
 
 - (void)didReceiveMemoryWarning {

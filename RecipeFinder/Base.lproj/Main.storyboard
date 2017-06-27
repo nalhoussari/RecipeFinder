@@ -294,8 +294,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="ingredientsLabel" destination="Jft-Gj-WC5" id="0Gj-eY-cFc"/>
-                        <outlet property="userInputTextField" destination="phO-7B-Ox7" id="VNQ-of-5j7"/>
+                        <outlet property="ingredientsLabel" destination="Jft-Gj-WC5" id="JNL-eD-nP1"/>
+                        <outlet property="userInputTextField" destination="phO-7B-Ox7" id="Xhl-tE-J5c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AlS-ty-KeD" userLabel="First Responder" sceneMemberID="firstResponder"/>

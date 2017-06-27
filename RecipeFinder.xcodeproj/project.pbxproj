@@ -356,6 +356,7 @@
 				7C8885121F01A7B1002AAC8F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
