@@ -11,10 +11,6 @@
 
 @interface DetailedRecipeViewController : ViewController
 
-@property (weak, nonatomic) IBOutlet UILabel *recipeName;
-@property (weak, nonatomic) IBOutlet UIImageView *recipeImage;
-@property (weak, nonatomic) IBOutlet UILabel *recipeDetailedLabel;
-
 @property (nonatomic) Recipe *recipe;
 
 @end
