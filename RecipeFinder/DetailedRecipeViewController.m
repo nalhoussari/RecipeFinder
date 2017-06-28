@@ -10,9 +10,10 @@
 
 @interface DetailedRecipeViewController ()
 
-@property (weak, nonatomic) IBOutlet UILabel *recipeName;
-@property (weak, nonatomic) IBOutlet UIImageView *recipeImage;
-@property (weak, nonatomic) IBOutlet UILabel *recipeDetailedLabel;
+@property (weak, nonatomic) IBOutlet UILabel *DetailRecipeName;
+@property (weak, nonatomic) IBOutlet UIImageView *DetailRecipeImage;
+@property (weak, nonatomic) IBOutlet UILabel *DetailRecipeLabel;
+
 
 @end
 
@@ -31,9 +32,10 @@
 
 - (void)configureView{
     if(self.recipe){
-        self.recipeImage.image = [UIImage imageNamed:recipe.recipeImage];
-        self.recipeName.text = recipe.title;
-        self.recipeDetailedLabel.text = recipe.recipeDetails;
+        self.DetailRecipeImage.image = self.recipe.recipeImage;
+        self.DetailRecipeName.text = self.recipe.recipeTitle;
+        self.DetailRecipeLabel.text = self.recipe.recipeDetails;
+
     }
 }
 
