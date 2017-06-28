@@ -9,7 +9,7 @@
 #import "UserInputViewController.h"
 
 
-@interface UserInputViewController ()
+@interface UserInputViewController () <UITextFieldDelegate>
 
 @property (nonatomic) NSMutableString *ingredientsString;
 
@@ -21,22 +21,31 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldDidChange:) name:UITextFieldTextDidChangeNotification object:self.userInputTextField];
+    self.userInputTextField.delegate = self;
+    self.ingredientsString = [@"" mutableCopy];
+    
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldDidChange:) name:UITextFieldTextDidChangeNotification object:self.userInputTextField];
 }
 
 - (IBAction)doneUserInput:(id)sender {
 }
 
-- (void)textFieldDidChange:(NSNotification *)notification {
-    
-    if(self.userInputTextField.text == nil){
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    return [textField resignFirstResponder];
+}
+
+-(void)textFieldDidEndEditing:(UITextField *)textField{
+    if([self.ingredientsString isEqualToString:@""]){
         self.ingredientsString = [NSMutableString stringWithString: self.userInputTextField.text];
     } else {
-        self.ingredientsString = [NSMutableString stringWithFormat:@",%@", self.userInputTextField.text];
+        [self.ingredientsString appendString: [NSString stringWithFormat:@",%@", self.userInputTextField.text]];
     }
     
+    //We can use this instead by adding the ingredients to an array and then separate them by what ever we want by this method:
+    //NSString *prettyPrintedArrayString =  [[NSArray array] componentsJoinedByString:@","];
+    
     self.ingredientsLabel.text = self.ingredientsString;
-    self.userInputTextField.text = nil;
+    self.userInputTextField.text = @"";
 }
 
 
@@ -45,6 +54,9 @@
         
         RecipesTableView *recipesTableView = segue.destinationViewController;
 
+        //Passing the ingredients to recipe ingredients
+        self.recipe.ingredients = self.ingredientsLabel.text;
+        
         //After setting the model Recipe
         recipesTableView.recipe = self.recipe;
         

@@ -348,7 +348,6 @@
                                         <connections>
                                             <outlet property="cellImage" destination="NaZ-Ku-fIF" id="KiE-QI-Woa"/>
                                             <outlet property="cellLabel" destination="tar-Mf-wIM" id="ZQ0-MM-xVr"/>
-                                            <segue destination="A0g-K1-9gw" kind="show" identifier="recipeDetail" id="DD7-Kk-GpB"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -364,6 +363,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="38O-Ih-y39" id="z1e-vW-nOo"/>
+                        <segue destination="A0g-K1-9gw" kind="show" identifier="recipeDetail" id="C9E-2D-xGb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yx7-Mt-8q8" userLabel="First Responder" sceneMemberID="firstResponder"/>

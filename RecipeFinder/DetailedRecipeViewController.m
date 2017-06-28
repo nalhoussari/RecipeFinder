@@ -19,16 +19,6 @@
 
 @implementation DetailedRecipeViewController
 
-#pragma mark - Managing the detail item
-
-- (void)setRecipe:(id)newRecipe {
-    if (self.recipe != newRecipe) {
-        self.recipe = newRecipe;
-        
-        // Update the view.
-        [self configureView];
-    }
-}
 
 - (void)configureView{
     if(self.recipe){
