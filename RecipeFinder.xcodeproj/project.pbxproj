@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4DD9F00A027F3CDE57F50F94 /* Pods_RecipeFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D878F9FD72967A4F0C00E0EB /* Pods_RecipeFinder.framework */; };
+		593EFB3A1F02D75E00E84E2E /* Recipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 593EFB391F02D75E00E84E2E /* Recipe.m */; };
 		7C8884FE1F01A7B1002AAC8F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8884FD1F01A7B1002AAC8F /* main.m */; };
 		7C8885011F01A7B1002AAC8F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8885001F01A7B1002AAC8F /* AppDelegate.m */; };
 		7C8885041F01A7B1002AAC8F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8885031F01A7B1002AAC8F /* ViewController.m */; };
@@ -17,11 +19,12 @@
 		7C8885181F01BE86002AAC8F /* UserInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8885171F01BE86002AAC8F /* UserInputViewController.m */; };
 		7C88851B1F01BEB0002AAC8F /* RecipesTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C88851A1F01BEB0002AAC8F /* RecipesTableView.m */; };
 		7C88851E1F01BEDC002AAC8F /* DetailedRecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C88851D1F01BEDC002AAC8F /* DetailedRecipeViewController.m */; };
-		7C8885211F01BF1D002AAC8F /* Recipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8885201F01BF1D002AAC8F /* Recipe.m */; };
 		7C8885241F01BFE4002AAC8F /* RecipeTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8885231F01BFE4002AAC8F /* RecipeTVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		593EFB381F02D75E00E84E2E /* Recipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Recipe.h; path = ../Recipe.h; sourceTree = "<group>"; };
+		593EFB391F02D75E00E84E2E /* Recipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Recipe.m; path = ../Recipe.m; sourceTree = "<group>"; };
 		7C8884F91F01A7B1002AAC8F /* RecipeFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipeFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C8884FD1F01A7B1002AAC8F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7C8884FF1F01A7B1002AAC8F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -40,10 +43,11 @@
 		7C88851A1F01BEB0002AAC8F /* RecipesTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipesTableView.m; sourceTree = "<group>"; };
 		7C88851C1F01BEDC002AAC8F /* DetailedRecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailedRecipeViewController.h; sourceTree = "<group>"; };
 		7C88851D1F01BEDC002AAC8F /* DetailedRecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailedRecipeViewController.m; sourceTree = "<group>"; };
-		7C88851F1F01BF1D002AAC8F /* Recipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recipe.h; sourceTree = "<group>"; };
-		7C8885201F01BF1D002AAC8F /* Recipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recipe.m; sourceTree = "<group>"; };
 		7C8885221F01BFE4002AAC8F /* RecipeTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeTVC.h; sourceTree = "<group>"; };
 		7C8885231F01BFE4002AAC8F /* RecipeTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeTVC.m; sourceTree = "<group>"; };
+		901218E328E1DCD13A169E0E /* Pods-RecipeFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipeFinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RecipeFinder/Pods-RecipeFinder.debug.xcconfig"; sourceTree = "<group>"; };
+		D878F9FD72967A4F0C00E0EB /* Pods_RecipeFinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecipeFinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA7D3A2E011C1ACFB6FA6B07 /* Pods-RecipeFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipeFinder.release.xcconfig"; path = "Pods/Target Support Files/Pods-RecipeFinder/Pods-RecipeFinder.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,17 +55,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DD9F00A027F3CDE57F50F94 /* Pods_RecipeFinder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		679114EA9E36BDDC0540ACB4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				901218E328E1DCD13A169E0E /* Pods-RecipeFinder.debug.xcconfig */,
+				FA7D3A2E011C1ACFB6FA6B07 /* Pods-RecipeFinder.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		7C8884F01F01A7B1002AAC8F = {
 			isa = PBXGroup;
 			children = (
 				7C8884FB1F01A7B1002AAC8F /* RecipeFinder */,
 				7C8884FA1F01A7B1002AAC8F /* Products */,
+				ED7461A84076A065346F3EA8 /* Frameworks */,
+				679114EA9E36BDDC0540ACB4 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,10 +97,10 @@
 				7C8885021F01A7B1002AAC8F /* ViewController.h */,
 				7C8885031F01A7B1002AAC8F /* ViewController.m */,
 				7C8885051F01A7B1002AAC8F /* Main.storyboard */,
+				593EFB381F02D75E00E84E2E /* Recipe.h */,
+				593EFB391F02D75E00E84E2E /* Recipe.m */,
 				7C8885221F01BFE4002AAC8F /* RecipeTVC.h */,
 				7C8885231F01BFE4002AAC8F /* RecipeTVC.m */,
-				7C88851F1F01BF1D002AAC8F /* Recipe.h */,
-				7C8885201F01BF1D002AAC8F /* Recipe.m */,
 				7C88851C1F01BEDC002AAC8F /* DetailedRecipeViewController.h */,
 				7C88851D1F01BEDC002AAC8F /* DetailedRecipeViewController.m */,
 				7C8885191F01BEB0002AAC8F /* RecipesTableView.h */,
@@ -109,6 +125,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		ED7461A84076A065346F3EA8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D878F9FD72967A4F0C00E0EB /* Pods_RecipeFinder.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -116,9 +140,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7C8885101F01A7B1002AAC8F /* Build configuration list for PBXNativeTarget "RecipeFinder" */;
 			buildPhases = (
+				9EC665BD7A6B6FD8FCE355D5 /* [CP] Check Pods Manifest.lock */,
 				7C8884F51F01A7B1002AAC8F /* Sources */,
 				7C8884F61F01A7B1002AAC8F /* Frameworks */,
 				7C8884F71F01A7B1002AAC8F /* Resources */,
+				469B08B635762D1D46653B0C /* [CP] Embed Pods Frameworks */,
+				F3266B5EAB76CA5D9A521B01 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -177,16 +204,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		469B08B635762D1D46653B0C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RecipeFinder/Pods-RecipeFinder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9EC665BD7A6B6FD8FCE355D5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F3266B5EAB76CA5D9A521B01 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RecipeFinder/Pods-RecipeFinder-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7C8884F51F01A7B1002AAC8F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				7C8885181F01BE86002AAC8F /* UserInputViewController.m in Sources */,
+				593EFB3A1F02D75E00E84E2E /* Recipe.m in Sources */,
 				7C88851B1F01BEB0002AAC8F /* RecipesTableView.m in Sources */,
 				7C8885041F01A7B1002AAC8F /* ViewController.m in Sources */,
 				7C8885241F01BFE4002AAC8F /* RecipeTVC.m in Sources */,
-				7C8885211F01BF1D002AAC8F /* Recipe.m in Sources */,
 				7C8885011F01A7B1002AAC8F /* AppDelegate.m in Sources */,
 				7C8885151F01BE06002AAC8F /* NutritionFilter.swift in Sources */,
 				7C8884FE1F01A7B1002AAC8F /* main.m in Sources */,
@@ -308,6 +383,7 @@
 		};
 		7C8885111F01A7B1002AAC8F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 901218E328E1DCD13A169E0E /* Pods-RecipeFinder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -324,6 +400,7 @@
 		};
 		7C8885121F01A7B1002AAC8F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA7D3A2E011C1ACFB6FA6B07 /* Pods-RecipeFinder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -356,6 +433,7 @@
 				7C8885121F01A7B1002AAC8F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
