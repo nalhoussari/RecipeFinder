@@ -8,15 +8,26 @@
 
 #import "RecipeTVC.h"
 
+<<<<<<< Updated upstream
 @interface RecipeTVC()
 
 @property (weak, nonatomic) IBOutlet UIView *cellImage;
 @property (weak, nonatomic) IBOutlet UILabel *cellLabel;
 
+=======
+<<<<<<< Updated upstream
+=======
+@interface RecipeTVC()
+
+>>>>>>> Stashed changes
 @property (nonatomic) Recipe *recipe;
 
 @end
 
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 @implementation RecipeTVC
 
 - (void)awakeFromNib {

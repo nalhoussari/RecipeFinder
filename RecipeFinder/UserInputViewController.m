@@ -11,17 +11,34 @@
 
 @interface UserInputViewController ()
 
+@property (nonatomic) NSMutableString *ingredientsString;
+
+
 @end
 
 @implementation UserInputViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldDidChange:) name:UITextFieldTextDidChangeNotification object:self.userInputTextField];
 }
 
 - (IBAction)doneUserInput:(id)sender {
 }
+
+- (void)textFieldDidChange:(NSNotification *)notification {
+    
+    if(self.userInputTextField.text == nil){
+        self.ingredientsString = [NSMutableString stringWithString: self.userInputTextField.text];
+    } else {
+        self.ingredientsString = [NSMutableString stringWithFormat:@",%@", self.userInputTextField.text];
+    }
+    
+    self.ingredientsLabel.text = self.ingredientsString;
+    self.userInputTextField.text = nil;
+}
+
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"recipeList"]){

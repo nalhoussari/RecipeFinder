@@ -10,7 +10,20 @@
 #import "Recipe.h"
 
 @interface RecipeTVC : UITableViewCell
+<<<<<<< Updated upstream
 
 - (void)configureCellWithRecipe: (Recipe *)recipe;
+=======
+<<<<<<< Updated upstream
+@property (weak, nonatomic) IBOutlet UIView *cellImage;
+@property (weak, nonatomic) IBOutlet UILabel *cellLabel;
+=======
+
+@property (weak, nonatomic) IBOutlet UIView *cellImage;
+@property (weak, nonatomic) IBOutlet UILabel *cellLabel;
+
+- (void)configureCellWithRecipe: (Recipe *)recipe;
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 
 @end

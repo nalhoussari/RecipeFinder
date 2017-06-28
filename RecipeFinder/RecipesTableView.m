@@ -22,11 +22,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+<<<<<<< Updated upstream
+=======
+<<<<<<< Updated upstream
+    // Do any additional setup after loading the view.
+=======
+>>>>>>> Stashed changes
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
+<<<<<<< Updated upstream
     self.recipes = [NSArray arrayWithArray: [self prepareUserRecipes]];
+    self.title = @"My Recipes";
+
+    [self prepareUserRecipes];
+=======
+    [self prepareUserRecipes];
     self.title = @"My Recipes";
 
     [self prepareUserRecipes];
@@ -46,6 +58,25 @@
     //here.. for creating Session for json and populate info out of url of API and add that object to the array: recipes
 
     
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.tableView deselectRowAtIndexPath:self.selectedIndexPath animated:YES];
+}
+
+<<<<<<< Updated upstream
+#pragma mark - prepare Array of Data
+
+//we need to specify the resipes according to the outcomes that matches the user inputes and their nutritions preferables with API info
+- (void) prepareUserRecipes{
+    
+    //here.. for creating Session for json and populate info out of url of API and add that object to the array: recipes
+
+    
 }
 
 #pragma mark - TableView DataSource
@@ -57,6 +88,17 @@
     return self.recipes.count;
 }
 
+=======
+<<<<<<< Updated upstream
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+=======
+>>>>>>> Stashed changes
 
 #pragma mark - TableView Delegate
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -98,18 +140,45 @@
     return cell;
 }
 
+<<<<<<< Updated upstream
 //no need for didSelectRowAtIndexPath if we linked segue on storyboard
+=======
+#pragma mark - Table View Delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"Table view cell tapped at row: %li", (long)indexPath.row);
+    //    self.currentlySelectedIndexPath = indexPath;
+    
+    [self performSegueWithIdentifier:@"recipeDetail" sender:self];
+    
+    // Needs refactoring for drinks
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+>>>>>>> Stashed changes
 
 #pragma mark - Navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     self.selectedIndexPath = [self.tableView indexPathForSelectedRow];
     
+<<<<<<< Updated upstream
     if ([segue.identifier isEqualToString:@"recipeDetail"])
     {
         Recipe *recipe = [self.recipes objectAtIndex:self.selectedIndexPath.row];
         DetailedRecipeViewController *detailedRecipeViewController = segue.destinationViewController;
         detailedRecipeViewController.recipe = recipe;
     }
+=======
+    if ([segue.identifier isEqualToString:@"recipeDetail"]){
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        
+        //        Recipe *recipe = [self.recipes objectAtIndex:self.selectedIndexPath.row];
+        DetailedRecipeViewController *detailedRecipeViewController = segue.destinationViewController;
+        detailedRecipeViewController.recipe = self.recipe;
+        [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    }
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 }
+
 
 @end

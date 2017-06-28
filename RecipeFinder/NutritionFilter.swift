@@ -19,6 +19,11 @@ class NutritionFilter: UIViewController {
     
     //We need to unite the variables on Recipe to those:
     var recipe: Recipe!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.recipe = Recipe ()
+    }
 
     @IBAction func veganButton(_ sender: UIButton) {
         if(recipe.isVegan == false){
@@ -70,12 +75,6 @@ class NutritionFilter: UIViewController {
             sender.backgroundColor = UIColor.yellow
             recipe.isDiaryFree = false
         }
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     

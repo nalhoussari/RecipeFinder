@@ -37,7 +37,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="let's go"/>
                                 <connections>
-                                    <segue destination="y2h-Dq-C4i" kind="show" identifier="filter" id="bHV-A9-Ema"/>
+                                    <segue destination="y2h-Dq-C4i" kind="show" id="gCE-n3-Ksn"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Recipe Finder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GAH-0Z-YNj">
@@ -192,9 +192,6 @@
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="vegetarianButton" destination="zIB-xn-6xx" id="qCi-6c-fwf"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Me0-1X-Lg8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -349,8 +346,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="cellImage" destination="LvL-ob-6f9" id="VTC-SG-RXl"/>
-                                            <outlet property="cellLabel" destination="tar-Mf-wIM" id="v4b-XZ-cH4"/>
+                                            <outlet property="cellImage" destination="NaZ-Ku-fIF" id="KiE-QI-Woa"/>
+                                            <outlet property="cellLabel" destination="tar-Mf-wIM" id="ZQ0-MM-xVr"/>
                                             <segue destination="A0g-K1-9gw" kind="show" identifier="recipeDetail" id="DD7-Kk-GpB"/>
                                         </connections>
                                     </tableViewCell>
@@ -424,9 +421,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="recipeDetailedLabel" destination="0Tg-wI-aFV" id="oLA-9y-DMN"/>
-                        <outlet property="recipeImage" destination="KaA-c2-bUM" id="e6e-bT-6GV"/>
-                        <outlet property="recipeName" destination="YEY-Kc-7W8" id="liA-Lq-4mo"/>
+                        <outlet property="DetailRecipeImage" destination="KaA-c2-bUM" id="v9p-xv-SZd"/>
+                        <outlet property="DetailRecipeLabel" destination="0Tg-wI-aFV" id="cXZ-i3-XbD"/>
+                        <outlet property="DetailRecipeName" destination="YEY-Kc-7W8" id="7rM-rc-vk9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MH7-gp-H4T" userLabel="First Responder" sceneMemberID="firstResponder"/>
