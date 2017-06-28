@@ -7,8 +7,20 @@
 //
 
 #import "ViewController.h"
+#import "Recipe.h"  // we need to change that after changing the Recipe file inot swift
+#import "DetailedRecipeViewController.h"
+#import "UserInputViewController.h"
 
-@interface RecipesTableView : ViewController
+@interface RecipesTableView : UIViewController <UITableViewDataSource, UITableViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (nonatomic) Recipe *recipe;
+
+//@property (nonatomic) BOOL isVagan;
+//@property (nonatomic) BOOL isVegetarian;
+//@property (nonatomic) BOOL isGlutenFree;
+//@property (nonatomic) BOOL isGrainFree;
+//@property (nonatomic) BOOL isDiaryFree;
 
 @end
