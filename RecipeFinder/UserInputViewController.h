@@ -5,11 +5,14 @@
 //  Created by Noor Alhoussari on 2017-06-26.
 //  Copyright © 2017 Noor Alhoussari. All rights reserved.
 //
+#import "Recipe.h"
 
 #import "ViewController.h"
 #import "RecipesTableView.h"
 #import "RecipeFinder-Bridging-Header.h"
-#import "Recipe.h"
+
+
+@class Recipe;
 
 @interface UserInputViewController : ViewController
 @property (weak, nonatomic) IBOutlet UITextField *userInputTextField;

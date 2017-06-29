@@ -9,7 +9,12 @@
 #import "ViewController.h"
 #import "Recipe.h"
 
+
+@class Recipe;
+
+
 @interface DetailedRecipeViewController : ViewController
+
 
 @property (nonatomic) Recipe *recipe;
 
