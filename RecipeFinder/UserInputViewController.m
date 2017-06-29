@@ -55,7 +55,7 @@
         RecipesTableView *recipesTableView = segue.destinationViewController;
 
         //Passing the ingredients to recipe ingredients
-//        self.recipe.ingredients = self.ingredientsLabel.text;
+        //self.recipe.ingredients = self.ingredientsLabel.text;
         
         //After setting the model Recipe
         recipesTableView.recipe = self.recipe;
