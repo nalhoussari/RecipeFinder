@@ -11,7 +11,7 @@
 
 @interface RecipesTableView ()
 
-@property (nonatomic) NSArray *recipes;
+@property (nonatomic) NSMutableArray *recipes;
 
 @end
 
@@ -25,10 +25,14 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
+    self.recipes = [NSMutableArray array];
+
+    
 //    self.recipes = [NSArray arrayWithArray: [self prepareUserRecipes]];
     self.title = @"My Recipes";
 
     [self prepareUserRecipes];
+    
 }
 
 #pragma mark - prepare Array of Data
@@ -37,6 +41,67 @@
 - (void) prepareUserRecipes{
     
     //here.. for creating Session for json and populate info out of url of API and add that object to the array: recipes
+    
+    NSString *formattedIngredients = [self.recipe.userIngredients stringByReplacingOccurrencesOfString:@"," withString:@"%2C"];
+    NSString *ingredientsURL = [NSString stringWithFormat:@"https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=%@&limitLicense=false&number=30&ranking=1", formattedIngredients];
+    
+    
+    NSDictionary *headers = @{@"X-Mashape-Key": @"0cnoKQkNG2mshdJX4uQedT3zcqI4p1W8QrHjsnKZcWPMzUW7Qu", @"Accept": @"application/json"};
+    
+    UNIUrlConnection *asyncConnection = [[UNIRest get:^(UNISimpleRequest *request) {
+        
+        request.url = ingredientsURL;
+        request.headers = headers;
+        
+    }] asJsonAsync:^(UNIHTTPJsonResponse *response, NSError *error) {
+        
+        NSData *rawBody = response.rawBody;
+        
+        NSArray *recipeArray = [NSJSONSerialization JSONObjectWithData: rawBody options: NSJSONReadingMutableContainers error: &error];
+        
+        if (!recipeArray) {
+            NSLog(@"Error parsing JSON: %@", error);
+        } else {
+            for(NSDictionary *dictionary in recipeArray) {
+                NSString *aPIRecipeImage = [dictionary objectForKey:@"image"];
+                NSString *stringRecipeID = [dictionary objectForKey:@"id"];
+                NSString *stringRecipeTitle = [dictionary objectForKey:@"title"];
+
+                
+                NSString *recipeDetailsURL = [ NSString stringWithFormat:@"https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/%@/analyzedInstructions?stepBreakdown=false", stringRecipeID];
+                
+                UNIUrlConnection *anothersyncConnection = [[UNIRest get:^(UNISimpleRequest *newRequest) {
+                    
+                    newRequest.url = recipeDetailsURL;
+                    newRequest.headers = headers;
+                    
+                }] asJsonAsync:^(UNIHTTPJsonResponse *response, NSError *error) {
+                    
+                    NSData *rawBody = response.rawBody;
+                    
+                    NSArray *recipeDetails = [NSJSONSerialization JSONObjectWithData: rawBody options: NSJSONReadingMutableContainers error: &error];
+                    
+                    if (!recipeDetails) {
+                        NSLog(@"Error parsing JSON: %@", error);
+                    } else {
+                        for(NSDictionary *dictionary in recipeDetails) {
+                            NSArray *steps = [dictionary objectForKey:@"steps"];
+                            for(NSDictionary *step in steps) {
+                                NSString *stringRecipeDetails = [step objectForKey:@"step"];
+                                
+                                //creating a recipe object and storing it in the array
+                                self.recipe = [[Recipe alloc] initWithRecipeImage:aPIRecipeImage andRecipeID:stringRecipeID andRecipeTitle:stringRecipeTitle andRecipeDetails:stringRecipeDetails];
+                                
+                                [self.recipes addObject:self.recipe];
+                                
+                            }
+                        }
+                    }
+                    [self.tableView reloadData];
+                }];
+            }
+        }
+    }];
 }
 
 #pragma mark - TableView DataSource
@@ -52,6 +117,12 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     RecipeTVC *cell = [tableView dequeueReusableCellWithIdentifier:@"recipeCell"];
+    Recipe *aRecipe = [self.recipes objectAtIndex:indexPath.row];
+    [cell configureCellWithRecipe:aRecipe];
+    NSURL *imageURL = [NSURL URLWithString:aRecipe.recipeImage];
+    NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
+    cell.cellImage.image = [UIImage imageWithData:imageData];
+    cell.cellLabel.text = aRecipe.recipeTitle;
 
     return cell;
 }
