@@ -18,7 +18,7 @@
 @property NSString *recipeTitle;
 @property NSString *recipeDetails;
 
-- (id)searchForRecipeIsVegan:(BOOL)isVegan IsVegatarian:(BOOL)isVegetarian IsGlutenFree:(BOOL)isGlutenFree IsGrainFree:(BOOL)isGrainFree IsDairyFree:(BOOL)isDairyFree;
+- (id)searchForRecipeIsVegan:(BOOL)isVegan IsVegetarian:(BOOL)isVegetarian IsGlutenFree:(BOOL)isGlutenFree IsGrainFree:(BOOL)isGrainFree IsDairyFree:(BOOL)isDairyFree;
 
 - (id)searchByIngredients:(NSString *)ingredients;
 
