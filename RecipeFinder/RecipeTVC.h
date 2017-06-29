@@ -11,7 +11,7 @@
 
 @interface RecipeTVC : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UIView *cellImage;
+@property (weak, nonatomic) IBOutlet UIImageView *cellImage;
 @property (weak, nonatomic) IBOutlet UILabel *cellLabel;
 
 - (void)configureCellWithRecipe: (Recipe *)recipe;
