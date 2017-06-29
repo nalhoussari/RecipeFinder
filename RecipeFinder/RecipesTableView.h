@@ -11,6 +11,9 @@
 #import "DetailedRecipeViewController.h"
 #import "UserInputViewController.h"
 
+
+@class Recipe;
+
 @interface RecipesTableView : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
