@@ -50,7 +50,7 @@
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if ([segue.identifier isEqualToString:@"recipeList"]){
+    if ([segue.identifier isEqualToString:@"recipesList"]){
         
         RecipesTableView *recipesTableView = segue.destinationViewController;
 
@@ -59,6 +59,7 @@
         
         //After setting the model Recipe
         recipesTableView.recipe = self.recipe;
+        recipesTableView.recipe.userIngredients = self.ingredientsLabel.text;
         
 //        recipesTableView.isVagan = self.isVagan;
 //        recipesTableView.isVegetarian = self.isVegetarian;

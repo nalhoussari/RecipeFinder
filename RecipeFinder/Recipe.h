@@ -13,14 +13,18 @@
 
 @interface Recipe : NSObject
 
-@property UIImage *recipeImage;
+@property NSString *recipeImage;
 @property NSString *recipeID;
 @property NSString *recipeTitle;
 @property NSString *recipeDetails;
+@property NSString *userIngredients;
+
 
 - (id)searchForRecipeIsVegan:(BOOL)isVegan IsVegetarian:(BOOL)isVegetarian IsGlutenFree:(BOOL)isGlutenFree IsGrainFree:(BOOL)isGrainFree IsDairyFree:(BOOL)isDairyFree;
 
-- (id)searchByIngredients:(NSString *)ingredients;
+- (instancetype)initWithRecipeImage: (UIImage *)recipeImage andRecipeID: (NSString *)recipeID andRecipeTitle: (NSString *)recipeTitle andRecipeDetails: (NSString *)recipeDetails;
+
+//- (id)searchByIngredients:(NSString *)ingredients;
 
 
 @end
