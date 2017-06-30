@@ -16,13 +16,14 @@
 @property NSString *recipeImage;
 @property NSString *recipeID;
 @property NSString *recipeTitle;
-@property NSString *recipeDetails;
+//@property NSString *recipeDetails;
+@property NSMutableArray *recipeDetails;
 @property NSString *userIngredients;
 
 - (id)searchForRecipeIsVegan:(BOOL)isVegan IsVegetarian:(BOOL)isVegetarian IsGlutenFree:(BOOL)isGlutenFree IsGrainFree:(BOOL)isGrainFree IsDairyFree:(BOOL)isDairyFree;
 
 
-- (instancetype)initWithRecipeImage: (UIImage *)recipeImage andRecipeID: (NSString *)recipeID andRecipeTitle: (NSString *)recipeTitle andRecipeDetails: (NSString *)recipeDetails;
+- (instancetype)initWithRecipeImage: (NSString *)recipeImage andRecipeID: (NSString *)recipeID andRecipeTitle: (NSString *)recipeTitle andRecipeDetails: (NSMutableArray *)recipeDetails;
 
 //- (id)searchByIngredients:(NSString *)ingredients;
 

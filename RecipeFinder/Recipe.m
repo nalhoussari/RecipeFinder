@@ -71,14 +71,14 @@
 }
 
 
-- (instancetype)initWithRecipeImage: (UIImage *)recipeImage andRecipeID: (NSString *)recipeID andRecipeTitle: (NSString *)recipeTitle andRecipeDetails: (NSString *)recipeDetails
+- (instancetype)initWithRecipeImage: (NSString *)recipeImage andRecipeID: (NSString *)recipeID andRecipeTitle: (NSString *)recipeTitle andRecipeDetails: (NSMutableArray *)recipeDetails
 {
     self = [super init];
     if (self) {
         self.recipeImage = recipeImage;
         self.recipeID = recipeID;
         self.recipeTitle = recipeTitle;
-        self.recipeDetails = recipeDetails;
+        self.recipeDetails = [[NSMutableArray alloc]initWithArray:recipeDetails];
     }
     return self;
 }
