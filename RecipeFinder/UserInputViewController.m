@@ -41,10 +41,12 @@
         [self.ingredientsString appendString: [NSString stringWithFormat:@",%@", self.userInputTextField.text]];
     }
     
+    NSString *userIngredients = [self.ingredientsString stringByReplacingOccurrencesOfString:@" " withString:@""];
+    
     //We can use this instead by adding the ingredients to an array and then separate them by what ever we want by this method:
     //NSString *prettyPrintedArrayString =  [[NSArray array] componentsJoinedByString:@","];
     
-    self.ingredientsLabel.text = self.ingredientsString;
+    self.ingredientsLabel.text = userIngredients;
     self.userInputTextField.text = @"";
 }
 

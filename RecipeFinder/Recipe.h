@@ -19,11 +19,13 @@
 //@property NSString *recipeDetails;
 @property NSMutableArray *recipeDetails;
 @property NSString *userIngredients;
+@property NSMutableArray *recipeIngredientsArray;
 
 - (id)searchForRecipeIsVegan:(BOOL)isVegan IsVegetarian:(BOOL)isVegetarian IsGlutenFree:(BOOL)isGlutenFree IsGrainFree:(BOOL)isGrainFree IsDairyFree:(BOOL)isDairyFree;
 
 
-- (instancetype)initWithRecipeImage: (NSString *)recipeImage andRecipeID: (NSString *)recipeID andRecipeTitle: (NSString *)recipeTitle andRecipeDetails: (NSMutableArray *)recipeDetails;
+- (instancetype)initWithRecipeImage: (NSString *)recipeImage andRecipeID: (NSString *)recipeID andRecipeTitle: (NSString *)recipeTitle andRecipeDetails: (NSMutableArray *)recipeDetails andRecipeIngredientsArray: (NSMutableArray *)recipeIngredientsArray;
+
 
 //- (id)searchByIngredients:(NSString *)ingredients;
 
