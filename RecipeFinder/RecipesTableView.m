@@ -33,9 +33,11 @@
     //    self.recipes = [NSArray arrayWithArray: [self prepareUserRecipes]];
     self.title = @"My Recipes";
     
+
     [self.spiner startAnimating];
     self.spiner.hidesWhenStopped = YES;
     
+
     [self prepareUserRecipes];
 }
 
@@ -96,11 +98,12 @@
                             NSMutableArray *recipeSteps = [[NSMutableArray alloc]init];
                             NSMutableArray *recipeIngredients = [[NSMutableArray alloc] init];
                             for(NSDictionary *step in steps) {
-                               // NSString *stringRecipeDetails = [step objectForKey:@"step"];
+                                // NSString *stringRecipeDetails = [step objectForKey:@"step"];
                                 //creating a recipe object and storing it in the array
                                 [recipeSteps addObject:[step objectForKey:@"step"]];
                                 [recipeIngredients addObject:[step objectForKey:@"ingredients"]];
                             }
+                            
                                 self.recipe = [[Recipe alloc] initWithRecipeImage:aPIRecipeImage andRecipeID:stringRecipeID andRecipeTitle:stringRecipeTitle andRecipeDetails:recipeSteps andRecipeIngredientsArray:recipeIngredients];
                                 
                                 [self.recipes addObject:self.recipe];
@@ -141,6 +144,20 @@
         }
     }];
     
+
+    //    NSSet *setRecipies = [NSSet setWithArray:self.recipes];
+    
+    //    NSMutableSet *tempSet = [[NSMutableSet alloc] init];
+    //    for (Recipe *aRecipe in self.recipes){
+    //        for (){
+    //
+    //        }
+    ////        if (![tempSet containsObject:aRecipe]){
+    ////            [tempSet addObject:aRecipe];
+    ////        }
+    //    }
+    //    self.recipes = [[tempSet allObjects] mutableCopy];
+
 
 
 }
