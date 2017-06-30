@@ -9,6 +9,7 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 
 @end
 
@@ -17,6 +18,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    self.backgroundImageView.image = [UIImage imageNamed:@"background"];
+//    self.backgroundImageView.backgroundColor = UIColor(patternImage: UIImage(named: "background"));
 }
 
 
