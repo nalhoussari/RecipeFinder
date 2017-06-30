@@ -26,11 +26,11 @@
     self.tableView.dataSource = self;
     
     self.recipes = [NSMutableArray array];
-
     
-//    self.recipes = [NSArray arrayWithArray: [self prepareUserRecipes]];
+    
+    //    self.recipes = [NSArray arrayWithArray: [self prepareUserRecipes]];
     self.title = @"My Recipes";
-
+    
     [self prepareUserRecipes];
     
 }
@@ -66,7 +66,7 @@
                 NSString *aPIRecipeImage = [dictionary objectForKey:@"image"];
                 NSString *stringRecipeID = [dictionary objectForKey:@"id"];
                 NSString *stringRecipeTitle = [dictionary objectForKey:@"title"];
-
+                
                 
                 NSString *recipeDetailsURL = [ NSString stringWithFormat:@"https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/%@/analyzedInstructions?stepBreakdown=false", stringRecipeID];
                 
@@ -106,7 +106,7 @@
 
 #pragma mark - TableView DataSource
 
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{    
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
 //}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -123,7 +123,7 @@
     NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
     cell.cellImage.image = [UIImage imageWithData:imageData];
     cell.cellLabel.text = aRecipe.recipeTitle;
-
+    
     return cell;
 }
 
@@ -135,16 +135,15 @@
 
 #pragma mark - Navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    if ([segue.identifier isEqualToString:@"recipeDetail"]){
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         
-        if ([segue.identifier isEqualToString:@"recipeDetail"]){
-            NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-            
-            //Recipe *recipe = [self.recipes objectAtIndex:self.selectedIndexPath.row];
-            DetailedRecipeViewController *detailedRecipeViewController = segue.destinationViewController;
-//            NSLog(@"the recipe @%", [self.recipes objectAtIndex:indexPath.row]);
-            detailedRecipeViewController.recipe = [self.recipes objectAtIndex:indexPath.row];
-            [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
-        }
+        //Recipe *recipe = [self.recipes objectAtIndex:self.selectedIndexPath.row];
+        DetailedRecipeViewController *detailedRecipeViewController = segue.destinationViewController;
+        //            NSLog(@"the recipe @%", [self.recipes objectAtIndex:indexPath.row]);
+        detailedRecipeViewController.recipe = [self.recipes objectAtIndex:indexPath.row];
+        [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    }
 }
 @end
-

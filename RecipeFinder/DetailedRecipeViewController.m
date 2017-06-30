@@ -12,7 +12,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *DetailRecipeName;
 @property (weak, nonatomic) IBOutlet UIImageView *DetailRecipeImage;
-@property (weak, nonatomic) IBOutlet UILabel *DetailRecipeLabel;
+//@property (weak, nonatomic) IBOutlet UILabel *DetailRecipeLabel;
+@property (weak, nonatomic) IBOutlet UITextView *DetailRecipeTextView;
 
 
 @end
@@ -22,9 +23,11 @@
 
 - (void)configureView{
     if(self.recipe){
-        self.DetailRecipeImage.image = self.recipe.recipeImage;
+        NSURL *imageURL = [NSURL URLWithString:self.recipe.recipeImage];
+        NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
+        self.DetailRecipeImage.image = [UIImage imageWithData:imageData];
         self.DetailRecipeName.text = self.recipe.recipeTitle;
-        self.DetailRecipeLabel.text = self.recipe.recipeDetails;
+        self.DetailRecipeTextView.text = self.recipe.recipeDetails;
 
     }
 }

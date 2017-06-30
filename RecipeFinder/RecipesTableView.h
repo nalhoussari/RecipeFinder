@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (nonatomic) Recipe *recipe;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spiner;
 
 //@property (nonatomic) BOOL isVagan;
 //@property (nonatomic) BOOL isVegetarian;
