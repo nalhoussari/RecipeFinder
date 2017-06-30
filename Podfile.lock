@@ -1,17 +1,12 @@
 PODS:
-  - DRPLoadingSpinner (1.3.0):
-    - DRPLoadingSpinner/core (= 1.3.0)
-  - DRPLoadingSpinner/core (1.3.0)
   - Unirest (1.1.4)
 
 DEPENDENCIES:
-  - DRPLoadingSpinner (~> 1.3)
   - Unirest (~> 1.1)
 
 SPEC CHECKSUMS:
-  DRPLoadingSpinner: ea8edd542a61da6fae3ec868676a5c8b3072dcf7
   Unirest: 5e4d93eaf32463bf619a4ecd3bbc8c32acf21eac
 
-PODFILE CHECKSUM: 61bd23bc45c9f734814e694e6bc2aea6834883f6
+PODFILE CHECKSUM: 0ebaf5345af4e423a7a79e98bd8ac200830d29e3
 
 COCOAPODS: 1.2.1

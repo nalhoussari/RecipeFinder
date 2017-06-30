@@ -104,6 +104,21 @@
             }
         }
     }];
+    
+//    NSSet *setRecipies = [NSSet setWithArray:self.recipes];
+    
+//    NSMutableSet *tempSet = [[NSMutableSet alloc] init];
+//    for (Recipe *aRecipe in self.recipes){
+//        for (){
+//            
+//        }
+////        if (![tempSet containsObject:aRecipe]){
+////            [tempSet addObject:aRecipe];
+////        }
+//    }
+//    self.recipes = [[tempSet allObjects] mutableCopy];
+    
+    
 }
 
 #pragma mark - TableView DataSource
