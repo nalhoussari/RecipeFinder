@@ -13,6 +13,7 @@
 
 @property (nonatomic) NSMutableArray *recipes;
 
+
 @end
 
 @implementation RecipesTableView
@@ -32,7 +33,6 @@
     self.title = @"My Recipes";
     
     [self prepareUserRecipes];
-    
 }
 
 #pragma mark - prepare Array of Data
@@ -41,6 +41,7 @@
 - (void) prepareUserRecipes{
     
     //here.. for creating Session for json and populate info out of url of API and add that object to the array: recipes
+    
     
     NSString *formattedIngredients = [self.recipe.userIngredients stringByReplacingOccurrencesOfString:@"," withString:@"%2C"];
     NSString *ingredientsURL = [NSString stringWithFormat:@"https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=%@&limitLicense=false&number=30&ranking=1", formattedIngredients];
@@ -86,15 +87,16 @@
                     } else {
                         for(NSDictionary *dictionary in recipeDetails) {
                             NSArray *steps = [dictionary objectForKey:@"steps"];
+                            NSMutableArray *recipeSteps = [[NSMutableArray alloc]init];
                             for(NSDictionary *step in steps) {
-                                NSString *stringRecipeDetails = [step objectForKey:@"step"];
-                                
+                               // NSString *stringRecipeDetails = [step objectForKey:@"step"];
                                 //creating a recipe object and storing it in the array
-                                self.recipe = [[Recipe alloc] initWithRecipeImage:aPIRecipeImage andRecipeID:stringRecipeID andRecipeTitle:stringRecipeTitle andRecipeDetails:stringRecipeDetails];
+                                [recipeSteps addObject:[step objectForKey:@"step"]];
+                            }
+                                self.recipe = [[Recipe alloc] initWithRecipeImage:aPIRecipeImage andRecipeID:stringRecipeID andRecipeTitle:stringRecipeTitle andRecipeDetails:recipeSteps];
                                 
                                 [self.recipes addObject:self.recipe];
-                                
-                            }
+                            
                         }
                     }
                     [self.tableView reloadData];
