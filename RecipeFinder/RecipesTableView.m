@@ -31,7 +31,7 @@
     
     //    self.recipes = [NSArray arrayWithArray: [self prepareUserRecipes]];
     self.title = @"My Recipes";
-
+    
     [self prepareUserRecipes];
 }
 
@@ -89,13 +89,13 @@
                             NSArray *steps = [dictionary objectForKey:@"steps"];
                             NSMutableArray *recipeSteps = [[NSMutableArray alloc]init];
                             for(NSDictionary *step in steps) {
-                               // NSString *stringRecipeDetails = [step objectForKey:@"step"];
+                                // NSString *stringRecipeDetails = [step objectForKey:@"step"];
                                 //creating a recipe object and storing it in the array
                                 [recipeSteps addObject:[step objectForKey:@"step"]];
                             }
-                                self.recipe = [[Recipe alloc] initWithRecipeImage:aPIRecipeImage andRecipeID:stringRecipeID andRecipeTitle:stringRecipeTitle andRecipeDetails:recipeSteps];
-                                
-                                [self.recipes addObject:self.recipe];
+                            self.recipe = [[Recipe alloc] initWithRecipeImage:aPIRecipeImage andRecipeID:stringRecipeID andRecipeTitle:stringRecipeTitle andRecipeDetails:recipeSteps];
+                            
+                            [self.recipes addObject:self.recipe];
                             
                         }
                     }
@@ -105,20 +105,20 @@
         }
     }];
     
-//    NSSet *setRecipies = [NSSet setWithArray:self.recipes];
+    //    NSSet *setRecipies = [NSSet setWithArray:self.recipes];
     
-//    NSMutableSet *tempSet = [[NSMutableSet alloc] init];
-//    for (Recipe *aRecipe in self.recipes){
-//        for (){
-//            
-//        }
-////        if (![tempSet containsObject:aRecipe]){
-////            [tempSet addObject:aRecipe];
-////        }
-//    }
-//    self.recipes = [[tempSet allObjects] mutableCopy];
-    
-    
+    //    NSMutableSet *tempSet = [[NSMutableSet alloc] init];
+    //    for (Recipe *aRecipe in self.recipes){
+    //        for (){
+    //
+    //        }
+    ////        if (![tempSet containsObject:aRecipe]){
+    ////            [tempSet addObject:aRecipe];
+    ////        }
+    //    }
+    //    self.recipes = [[tempSet allObjects] mutableCopy];
+
+
 }
 
 #pragma mark - TableView DataSource
