@@ -8,12 +8,10 @@
 
 #import "RecipesTableView.h"
 #import "RecipeTVC.h"
-#import "DRPLoadingSpinner.h"
 
 @interface RecipesTableView ()
 
 @property (nonatomic) NSMutableArray *recipes;
-@property DRPLoadingSpinner *spinner;
 
 
 @end
@@ -33,11 +31,7 @@
     
     //    self.recipes = [NSArray arrayWithArray: [self prepareUserRecipes]];
     self.title = @"My Recipes";
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> 49f0d4f0f9d1bd3ac8ea1ef046280445482e5b58
     [self prepareUserRecipes];
 }
 
