@@ -20,6 +20,14 @@
 
 @implementation DetailedRecipeViewController
 
+//- (NSString *)recipeDetailArray{
+//    
+//    NSMutableString *allSteps = [[NSMutableString alloc] init];
+//    
+//    for (NSString *steps in self.recipe.recipeDetails){
+//        allSteps
+//    }
+//}
 
 - (void)configureView{
     if(self.recipe){
