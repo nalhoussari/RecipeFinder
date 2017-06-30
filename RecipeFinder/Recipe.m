@@ -11,7 +11,7 @@
 
 @implementation Recipe
 
-- (id)searchForRecipeIsVegan:(BOOL)isVegan IsVegatarian:(BOOL)isVegetarian IsGlutenFree:(BOOL)isGlutenFree IsGrainFree:(BOOL)isGrainFree IsDairyFree:(BOOL)isDairyFree {
+- (id)searchForRecipeIsVegan:(BOOL)isVegan IsVegetarian:(BOOL)isVegetarian IsGlutenFree:(BOOL)isGlutenFree IsGrainFree:(BOOL)isGrainFree IsDairyFree:(BOOL)isDairyFree {
     
     NSDictionary *headers = @{@"X-Mashape-Key": @"0cnoKQkNG2mshdJX4uQedT3zcqI4p1W8QrHjsnKZcWPMzUW7Qu", @"Accept": @"application/json"};
     UNIUrlConnection *asyncConnection = [[UNIRest get:^(UNISimpleRequest *request) {
@@ -71,14 +71,14 @@
 }
 
 
-- (instancetype)initWithRecipeImage: (UIImage *)recipeImage andRecipeID: (NSString *)recipeID andRecipeTitle: (NSString *)recipeTitle andRecipeDetails: (NSString *)recipeDetails
+- (instancetype)initWithRecipeImage: (NSString *)recipeImage andRecipeID: (NSString *)recipeID andRecipeTitle: (NSString *)recipeTitle andRecipeDetails: (NSMutableArray *)recipeDetails
 {
     self = [super init];
     if (self) {
         self.recipeImage = recipeImage;
         self.recipeID = recipeID;
         self.recipeTitle = recipeTitle;
-        self.recipeDetails = recipeDetails;
+        self.recipeDetails = [[NSMutableArray alloc]initWithArray:recipeDetails];
     }
     return self;
 }
