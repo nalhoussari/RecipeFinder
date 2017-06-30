@@ -12,6 +12,7 @@
 @interface RecipesTableView ()
 
 @property (nonatomic) NSMutableArray *recipes;
+@property (nonatomic) int downlaodingRecipesCount;
 
 
 @end
@@ -31,7 +32,10 @@
     
     //    self.recipes = [NSArray arrayWithArray: [self prepareUserRecipes]];
     self.title = @"My Recipes";
-
+    
+    [self.spiner startAnimating];
+    self.spiner.hidesWhenStopped = YES;
+    
     [self prepareUserRecipes];
 }
 
@@ -59,13 +63,14 @@
         NSData *rawBody = response.rawBody;
         
         NSArray *recipeArray = [NSJSONSerialization JSONObjectWithData: rawBody options: NSJSONReadingMutableContainers error: &error];
+        self.downlaodingRecipesCount = (int)[recipeArray count];
         
         if (!recipeArray) {
             NSLog(@"Error parsing JSON: %@", error);
         } else {
             for(NSDictionary *dictionary in recipeArray) {
                 NSString *aPIRecipeImage = [dictionary objectForKey:@"image"];
-                NSString *stringRecipeID = [dictionary objectForKey:@"id"];
+                NSString *stringRecipeID = [[dictionary objectForKey:@"id"] stringValue];
                 NSString *stringRecipeTitle = [dictionary objectForKey:@"title"];
                 
                 
@@ -77,6 +82,7 @@
                     newRequest.headers = headers;
                     
                 }] asJsonAsync:^(UNIHTTPJsonResponse *response, NSError *error) {
+                    self.downlaodingRecipesCount--;
                     
                     NSData *rawBody = response.rawBody;
                     
@@ -88,37 +94,55 @@
                         for(NSDictionary *dictionary in recipeDetails) {
                             NSArray *steps = [dictionary objectForKey:@"steps"];
                             NSMutableArray *recipeSteps = [[NSMutableArray alloc]init];
+                            NSMutableArray *recipeIngredients = [[NSMutableArray alloc] init];
                             for(NSDictionary *step in steps) {
                                // NSString *stringRecipeDetails = [step objectForKey:@"step"];
                                 //creating a recipe object and storing it in the array
                                 [recipeSteps addObject:[step objectForKey:@"step"]];
+                                [recipeIngredients addObject:[step objectForKey:@"ingredients"]];
                             }
-                                self.recipe = [[Recipe alloc] initWithRecipeImage:aPIRecipeImage andRecipeID:stringRecipeID andRecipeTitle:stringRecipeTitle andRecipeDetails:recipeSteps];
+                                self.recipe = [[Recipe alloc] initWithRecipeImage:aPIRecipeImage andRecipeID:stringRecipeID andRecipeTitle:stringRecipeTitle andRecipeDetails:recipeSteps andRecipeIngredientsArray:recipeIngredients];
                                 
                                 [self.recipes addObject:self.recipe];
                             
                         }
                     }
-                    [self.tableView reloadData];
+                    if(self.downlaodingRecipesCount == 0){
+                        //    NSMutableSet *tempSet = [[NSMutableSet alloc] init];
+                        for (Recipe *aRecipe in self.recipes){
+                            NSLog(@"recipe id is: %@ and the title is: %@", aRecipe.recipeID, aRecipe.recipeTitle);
+                            //        if (![tempSet containsObject:aRecipe]){
+                            //            [tempSet addObject:aRecipe];
+                            //        }
+                        }
+                        //    self.recipes = [[tempSet allObjects] mutableCopy];
+                        
+                        //Sorting the array of recipes of dublicates
+                        NSMutableSet *sortingSet = [[NSMutableSet alloc] init];
+                        NSMutableArray *sortedRecipeArray = [[NSMutableArray alloc] init];
+                        
+                        for (Recipe *aRecipe in self.recipes){
+//                            NSString *stringID = [[NSString alloc]initWithString:aRecipe.recipeID];
+                            
+                            if (![sortingSet containsObject:aRecipe.recipeID]){
+                                [sortingSet addObject:aRecipe.recipeID];
+                                [sortedRecipeArray addObject:aRecipe];
+                            }
+                        }
+                        
+                        self.recipes = sortedRecipeArray;
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            [self.tableView reloadData];
+                            [self.spiner stopAnimating];
+                        });
+                    }
                 }];
             }
         }
     }];
     
-//    NSSet *setRecipies = [NSSet setWithArray:self.recipes];
-    
-//    NSMutableSet *tempSet = [[NSMutableSet alloc] init];
-//    for (Recipe *aRecipe in self.recipes){
-//        for (){
-//            
-//        }
-////        if (![tempSet containsObject:aRecipe]){
-////            [tempSet addObject:aRecipe];
-////        }
-//    }
-//    self.recipes = [[tempSet allObjects] mutableCopy];
-    
-    
+
+
 }
 
 #pragma mark - TableView DataSource
