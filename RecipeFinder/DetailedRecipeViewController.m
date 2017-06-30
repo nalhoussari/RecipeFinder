@@ -20,14 +20,18 @@
 
 @implementation DetailedRecipeViewController
 
-//- (NSString *)recipeDetailArray{
-//    
-//    NSMutableString *allSteps = [[NSMutableString alloc] init];
-//    
-//    for (NSString *steps in self.recipe.recipeDetails){
-//        allSteps
-//    }
-//}
+- (NSString *)recipeDetailArray{
+    
+    NSMutableString *allSteps = [[NSMutableString alloc] init];
+    
+//    int stepNumber = 1;
+    for (NSString *steps in self.recipe.recipeDetails){
+        [allSteps appendFormat:@"%@\n\n", steps];
+        NSLog(@" %@\n", steps);
+//        stepNumber++;
+    }
+    return allSteps;
+}
 
 - (void)configureView{
     if(self.recipe){
@@ -35,8 +39,8 @@
         NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
         self.DetailRecipeImage.image = [UIImage imageWithData:imageData];
         self.DetailRecipeName.text = self.recipe.recipeTitle;
-        self.DetailRecipeTextView.text = self.recipe.recipeDetails;
-
+        self.DetailRecipeTextView.text = self.recipeDetailArray;
+        NSLog(@"The steps are: %@", self.recipeDetailArray);
     }
 }
 
@@ -44,6 +48,8 @@
     [super viewDidLoad];
     
     [self configureView];
+    
+    self.DetailRecipeTextView.editable = NO;
 }
 
 
