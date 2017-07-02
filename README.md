@@ -9,7 +9,7 @@ Smart search: the recipes will still be generated regardless of miss-spelling or
 
 Features added: a spinner while waiting for the recipes data to be listed.
 
-The API used generate more that 350,000 recipes
+The API used in this app, generate more that 350,000 recipes
 (The chargeable API was unsubscribed for this App till it's finalized and/or to be added to the app store)
 
 Features to be added: save "My favourite Recipes”
