@@ -15,29 +15,31 @@
 //@property (weak, nonatomic) IBOutlet UILabel *DetailRecipeLabel;
 @property (weak, nonatomic) IBOutlet UITextView *DetailRecipeTextView;
 
-- (NSString *)recipeIngredientsArrayString;
+//- (NSString *)recipeIngredientsArrayString;
 
 @end
 
 @implementation DetailedRecipeViewController
 
-- (NSString *)recipeIngredientsArrayString{
-    NSMutableString *allIngredients = [[NSMutableString alloc] init];
-    
-    for (NSString *ingredients in self.recipe.recipeIngredientsArray){
-        [allIngredients appendFormat:@"%@\n\n", ingredients];
-        NSLog(@"%@\n", ingredients);
-    }
-    return allIngredients;
-}
+//- (NSString *)recipeIngredientsArrayString{
+//    NSMutableString *allIngredients = [[NSMutableString alloc] init];
+//    
+//    for (NSString *ingredients in self.recipe.recipeIngredientsArray){
+//        [allIngredients appendFormat:@"%@\n\n", ingredients];
+//        NSLog(@"%@\n", ingredients);
+//    }
+//    return allIngredients;
+//}
 
 - (NSString *)recipeDetailArray{
     
     NSMutableString *allSteps = [[NSMutableString alloc] init];
     
     for (NSString *steps in self.recipe.recipeDetails){
-        [allSteps appendFormat:@"%@\n%@\n\n",self.recipeIngredientsArrayString, steps];
-        NSLog(@" %@\n", steps);
+//        [allSteps appendFormat:@"%@\n%@\n\n", self.recipeIngredientsArrayString, steps];
+//        NSLog(@" %@\n", steps);
+        [allSteps appendFormat:@"%@\n\n", steps];
+        NSLog(@"%@\n", steps);
     }
     return allSteps;
 }

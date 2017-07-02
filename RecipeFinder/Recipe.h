@@ -21,6 +21,13 @@
 @property NSString *userIngredients;
 @property NSMutableArray *recipeIngredientsArray;
 
+@property (nonatomic) BOOL isVegan;
+@property (nonatomic) BOOL isVegetarian;
+@property (nonatomic) BOOL isGlutenFree;
+@property (nonatomic) BOOL isGrainFree;
+@property (nonatomic) BOOL isDiaryFree;
+
+
 - (id)searchForRecipeIsVegan:(BOOL)isVegan IsVegetarian:(BOOL)isVegetarian IsGlutenFree:(BOOL)isGlutenFree IsGrainFree:(BOOL)isGrainFree IsDairyFree:(BOOL)isDairyFree;
 
 
