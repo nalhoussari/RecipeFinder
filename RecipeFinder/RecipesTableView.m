@@ -79,7 +79,7 @@
                 NSString *recipeDetailsURL = [ NSString stringWithFormat:@"https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/%@/analyzedInstructions?stepBreakdown=false", stringRecipeID];
                 
                 UNIUrlConnection *anothersyncConnection = [[UNIRest get:^(UNISimpleRequest *newRequest) {
-                    
+                
                     newRequest.url = recipeDetailsURL;
                     newRequest.headers = headers;
                     
@@ -98,12 +98,11 @@
                             NSMutableArray *recipeSteps = [[NSMutableArray alloc]init];
                             NSMutableArray *recipeIngredients = [[NSMutableArray alloc] init];
                             for(NSDictionary *step in steps) {
-                                // NSString *stringRecipeDetails = [step objectForKey:@"step"];
-                                //creating a recipe object and storing it in the array
                                 [recipeSteps addObject:[step objectForKey:@"step"]];
                                 [recipeIngredients addObject:[step objectForKey:@"ingredients"]];
                             }
-                            
+                           
+                            //creating a recipe object and adding it in to the array
                                 self.recipe = [[Recipe alloc] initWithRecipeImage:aPIRecipeImage andRecipeID:stringRecipeID andRecipeTitle:stringRecipeTitle andRecipeDetails:recipeSteps andRecipeIngredientsArray:recipeIngredients];
                                 
                                 [self.recipes addObject:self.recipe];
@@ -111,21 +110,15 @@
                         }
                     }
                     if(self.downlaodingRecipesCount == 0){
-                        //    NSMutableSet *tempSet = [[NSMutableSet alloc] init];
                         for (Recipe *aRecipe in self.recipes){
                             NSLog(@"recipe id is: %@ and the title is: %@", aRecipe.recipeID, aRecipe.recipeTitle);
-                            //        if (![tempSet containsObject:aRecipe]){
-                            //            [tempSet addObject:aRecipe];
-                            //        }
                         }
-                        //    self.recipes = [[tempSet allObjects] mutableCopy];
                         
-                        //Sorting the array of recipes of dublicates
+                        //Filtering the array of recipes of any dublicates
                         NSMutableSet *sortingSet = [[NSMutableSet alloc] init];
                         NSMutableArray *sortedRecipeArray = [[NSMutableArray alloc] init];
                         
                         for (Recipe *aRecipe in self.recipes){
-//                            NSString *stringID = [[NSString alloc]initWithString:aRecipe.recipeID];
                             
                             if (![sortingSet containsObject:aRecipe.recipeID]){
                                 [sortingSet addObject:aRecipe.recipeID];
@@ -143,29 +136,10 @@
             }
         }
     }];
-    
-
-    //    NSSet *setRecipies = [NSSet setWithArray:self.recipes];
-    
-    //    NSMutableSet *tempSet = [[NSMutableSet alloc] init];
-    //    for (Recipe *aRecipe in self.recipes){
-    //        for (){
-    //
-    //        }
-    ////        if (![tempSet containsObject:aRecipe]){
-    ////            [tempSet addObject:aRecipe];
-    ////        }
-    //    }
-    //    self.recipes = [[tempSet allObjects] mutableCopy];
-
-
 
 }
 
 #pragma mark - TableView DataSource
-
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-//}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.recipes.count;

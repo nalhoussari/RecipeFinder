@@ -25,58 +25,58 @@ class NutritionFilter: UIViewController {
         self.recipe = Recipe ()
     }
 
-//    @IBAction func veganButton(_ sender: UIButton) {
-//        if(recipe.isVegan == false){
-//            sender.backgroundColor = UIColor.red
-//            recipe.isVegan = true
-//        } else {
-//            sender.backgroundColor = UIColor.yellow
-//            recipe.isVegan = false
-//        }
-//    }
-//    
-//    @IBAction func vegetarianButton(_ sender: UIButton) {
-//        if(recipe.isVegetarian == false){
-//            sender.backgroundColor = UIColor.red
-//            recipe.isVegetarian = true
-//        } else {
-//            sender.backgroundColor = UIColor.yellow
-//            recipe.isVegetarian = false
-//        }
-//    }
-//    
-//    @IBAction func glutenButton(_ sender: UIButton) {
-//        if(recipe.isGlutenFree == false){
-//            sender.backgroundColor = UIColor.red
-//            recipe.isGlutenFree = true
-//        } else {
-//            sender.backgroundColor = UIColor.yellow
-//            recipe.isGlutenFree = false
-//        }
-//    }
-//    
-//    
-//    @IBAction func grainButton(_ sender: UIButton) {
-//        if(recipe.isGrainFree == false){
-//            sender.backgroundColor = UIColor.red
-//            recipe.isGrainFree = true
-//        } else {
-//            sender.backgroundColor = UIColor.yellow
-//            recipe.isGrainFree = false
-//        }
-//    }
-//    
-//    
-//    @IBAction func dairyButton(_ sender: UIButton) {
-//        if(recipe.isDiaryFree == false){
-//            sender.backgroundColor = UIColor.red
-//            recipe.isDiaryFree = true
-//        } else {
-//            sender.backgroundColor = UIColor.yellow
-//            recipe.isDiaryFree = false
-//        }
-//    }
+    @IBAction func veganButton(_ sender: UIButton) {
+        if(recipe.isVegan == false){
+            sender.backgroundColor = UIColor.red
+            recipe.isVegan = true
+        } else {
+            sender.backgroundColor = UIColor.yellow
+            recipe.isVegan = false
+        }
+    }
     
+    @IBAction func vegetarianButton(_ sender: UIButton) {
+        if(recipe.isVegetarian == false){
+            sender.backgroundColor = UIColor.red
+            recipe.isVegetarian = true
+        } else {
+            sender.backgroundColor = UIColor.yellow
+            recipe.isVegetarian = false
+        }
+    }
+    
+    @IBAction func glutenButton(_ sender: UIButton) {
+        if(recipe.isGlutenFree == false){
+            sender.backgroundColor = UIColor.red
+            recipe.isGlutenFree = true
+        } else {
+            sender.backgroundColor = UIColor.yellow
+            recipe.isGlutenFree = false
+        }
+    }
+    
+    
+    @IBAction func grainButton(_ sender: UIButton) {
+        if(recipe.isGrainFree == false){
+            sender.backgroundColor = UIColor.red
+            recipe.isGrainFree = true
+        } else {
+            sender.backgroundColor = UIColor.yellow
+            recipe.isGrainFree = false
+        }
+    }
+    
+    
+    @IBAction func dairyButton(_ sender: UIButton) {
+        if(recipe.isDiaryFree == false){
+            sender.backgroundColor = UIColor.red
+            recipe.isDiaryFree = true
+        } else {
+            sender.backgroundColor = UIColor.yellow
+            recipe.isDiaryFree = false
+        }
+    }
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "userInput"{
