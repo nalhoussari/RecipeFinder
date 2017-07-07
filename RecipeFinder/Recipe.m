@@ -13,7 +13,7 @@
 
 - (id)searchForRecipeIsVegan:(BOOL)isVegan IsVegetarian:(BOOL)isVegetarian IsGlutenFree:(BOOL)isGlutenFree IsGrainFree:(BOOL)isGrainFree IsDairyFree:(BOOL)isDairyFree {
     
-    NSDictionary *headers = @{@"X-Mashape-Key": @***REMOVED***, @"Accept": @"application/json"};
+    NSDictionary *headers = @{@"X-Mashape-Key": @"0cnoKQkNG2mshdJX4uQedT3zcqI4p1W8QrHjsnKZcWPMzUW7Qu", @"Accept": @"application/json"};
     UNIUrlConnection *asyncConnection = [[UNIRest get:^(UNISimpleRequest *request) {
         
         if(isVegan == YES) {
