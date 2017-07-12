@@ -8,6 +8,7 @@
 
 #import "RecipesTableView.h"
 #import "RecipeTVC.h"
+#import "ApiKeys.h"
 
 @interface RecipesTableView ()
 
@@ -53,7 +54,7 @@
     NSString *ingredientsURL = [NSString stringWithFormat:@"https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=%@&limitLicense=false&number=30&ranking=1", formattedIngredients];
     
     
-    NSDictionary *headers = @{@"X-Mashape-Key": @"0cnoKQkNG2mshdJX4uQedT3zcqI4p1W8QrHjsnKZcWPMzUW7Qu", @"Accept": @"application/json"};
+    NSDictionary *headers = @{@"X-Mashape-Key": API_KEY, @"Accept": @"application/json"};
     
     UNIUrlConnection *asyncConnection = [[UNIRest get:^(UNISimpleRequest *request) {
         

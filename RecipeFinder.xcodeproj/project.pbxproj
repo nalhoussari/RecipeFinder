@@ -46,6 +46,7 @@
 		7C8885201F01BF1D002AAC8F /* Recipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recipe.m; sourceTree = "<group>"; };
 		7C8885221F01BFE4002AAC8F /* RecipeTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeTVC.h; sourceTree = "<group>"; };
 		7C8885231F01BFE4002AAC8F /* RecipeTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeTVC.m; sourceTree = "<group>"; };
+		7CD7B00C1F16AC5F007351EE /* ApiKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ApiKeys.h; path = ../ApiKeys.h; sourceTree = "<group>"; };
 		815B330E74961D62834CC8F3 /* Pods-RecipeFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipeFinder.release.xcconfig"; path = "Pods/Target Support Files/Pods-RecipeFinder/Pods-RecipeFinder.release.xcconfig"; sourceTree = "<group>"; };
 		DCB8AE068B9D6A341D6D318F /* Pods_RecipeFinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecipeFinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -100,6 +101,7 @@
 		7C8884FB1F01A7B1002AAC8F /* RecipeFinder */ = {
 			isa = PBXGroup;
 			children = (
+				7CD7B00C1F16AC5F007351EE /* ApiKeys.h */,
 				7C8884FF1F01A7B1002AAC8F /* AppDelegate.h */,
 				7C8885001F01A7B1002AAC8F /* AppDelegate.m */,
 				7C8885021F01A7B1002AAC8F /* ViewController.h */,
