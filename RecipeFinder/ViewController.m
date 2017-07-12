@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "Recipe.h"
 
 @interface ViewController ()
 
@@ -17,6 +18,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+     NSString *ingredientsTest = @"apples,cucumbers,chicken,milk";
+    Recipe *recipe = [[Recipe alloc]init];
+    [recipe searchByIngredients:ingredientsTest];
 }
 
 
