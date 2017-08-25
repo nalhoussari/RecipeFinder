@@ -54,7 +54,11 @@
     NSString *ingredientsURL = [NSString stringWithFormat:@"https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=%@&limitLicense=false&number=30&ranking=1", formattedIngredients];
     
     
+<<<<<<< HEAD
     NSDictionary *headers = @{@"X-Mashape-Key": API_KEY, @"Accept": @"application/json"};
+=======
+    NSDictionary *headers = @{@"X-Mashape-Key": @"0cnoKQkNG2mshdJX4uQedT3zcqI4p1W8QrHjsnKZcWPMzUW7Qu", @"Accept": @"application/json"};
+>>>>>>> 8ded400837d8121d6ecca69f3ce88bed7103d952
     
     UNIUrlConnection *asyncConnection = [[UNIRest get:^(UNISimpleRequest *request) {
         
